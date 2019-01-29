@@ -90,10 +90,10 @@
 <meta property="og:image" content="https://img-1257700546.cos.ap-shanghai.myqcloud.com/img/linked_ins_del.png">
 <meta property="og:image" content="https://img-1257700546.cos.ap-shanghai.myqcloud.com/img/circular Linked List.jpg">
 <meta property="og:image" content="https://img-1257700546.cos.ap-shanghai.myqcloud.com/img/doublyLinkedList.jpg">
-<meta property="og:image" content="https://img-1257700546.p-shanghai.myqcloud.com/img/Doubly Circular Linked List.jpg">
+<meta property="og:image" content="https://img-1257700546.cos.ap-shanghai.myqcloud.com/img/doublyCircularLinkedList.jpg">
 <meta property="og:image" content="https://img-1257700546.cos.ap-shanghai.myqcloud.com/img/arr linked memory.jpg">
 <meta property="og:image" content="https://img-1257700546.cos.ap-shanghai.myqcloud.com/img/arr linked O.jpg">
-<meta property="og:updated_time" content="2019-01-29T00:52:12.756Z">
+<meta property="og:updated_time" content="2019-01-29T00:58:35.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构与算法 -- 链表">
 <meta name="twitter:description" content="链表也是一种最基础的数据结构，同数组相同也是线性表结构，不同的是链表并不需要连续存储，它是通过指针指向下一结点，来实现相互的连接关系。相比数组，链表相关的知识点及变形形式更多也更复杂一点，比如单链表、双链表、循环链表等等。链表结构清晰，理解起来不难，难点是在如何优化实现代码，这个就要多多练习了。 单链表链表的存储结构并不是连续的，通过指针将一组零散的内存块链在一起。这些内存块我们通常叫做为结点，它">
@@ -424,8 +424,8 @@
 <h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p>单向链表只有一个方向，结点只有一个后继指针 next 指向后面的结点。而双向链表，它的每个数据结点中都有两个指针，分别指向直接后继next和直接前驱prev。所以，从双向链表中的任意一个结点开始，都可以很方便地访问它的前驱结点和后继结点。</p>
 <p><img src="https://img-1257700546.cos.ap-shanghai.myqcloud.com/img/doublyLinkedList.jpg" alt=""></p>
 <p>但通常为了方便使用，一般我们都构造 <strong><code>双向循环链表</code></strong>。</p>
-<p><img src="https://img-1257700546.p-shanghai.myqcloud.com/img/Doubly Circular Linked List.jpg" alt=""></p>
-<p>双向链表可以$O(1)​$时间复杂度的情况下找到前驱结点，正是这样的特点，也使双向链表在某些情况下的插入、删除等操作都要比单链表简单、高效。但双链表需要额外的两个空间来存储后继结点和前驱结点的地址，所以存储同样多的数据，双链表要比单链表占用更多的内存空间。</p>
+<p><img src="https://img-1257700546.cos.ap-shanghai.myqcloud.com/img/doublyCircularLinkedList.jpg" alt=""></p>
+<p>双向链表可以$O(1)$时间复杂度的情况下找到前驱结点，正是这样的特点，也使双向链表在某些情况下的插入、删除等操作都要比单链表简单、高效。但双链表需要额外的两个空间来存储后继结点和前驱结点的地址，所以存储同样多的数据，双链表要比单链表占用更多的内存空间。</p>
 <p>那既然双链表需要更多的内存，为什么还推荐使用呢？这里有一个更加重要的知识点，那就是<strong><code>用空间换时间</code></strong>。当内存空间充足的时候，如果需要追求代码的执行速度，就可以选择空间复杂度相对较高、但时间复杂度相对很低的算法或者数据结构。相反，如果内存比较紧缺，比如代码跑在手机或者单片机上，这个时候，就要反过来用时间换空间的设计思路。总结一下，就是对于执行较慢的程序，可以通过消耗更多的内存（空间换时间）来进行优化；而消耗过多内存的程序，可以通过消耗更多的时间（时间换空间）来降低内存的消耗。</p>
 <p>但在具体的开发中，使用哪种方式、哪种结构，并没有定式。到底哪个更合适，还要根据具体情况具体分析，选择一种最合适的结构。</p>
 <h3 id="与数组比较"><a href="#与数组比较" class="headerlink" title="与数组比较"></a>与数组比较</h3><p>链表和数组都是线性表，造成它们之间特性不同的最大原因就是内存存储结构不同。数组是连续的、链表是不连续的。因此数组对内存的要求要高一些，比如要申请100MB 大小的数组，但当内存中没有连续的、足够大的存储空间时，即便内存的剩余总可用空间大于 100MB，仍然会申请失败，而链表就不存在这个问题。</p>
